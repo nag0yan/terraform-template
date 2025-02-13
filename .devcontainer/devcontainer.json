@@ -18,7 +18,8 @@
 				"terraform-docs.terraform-docs",
 				"ms-azuretools.vscode-docker",
 				"GitHub.vscode-pull-request-github",
-				"GitHub.copilot"
+				"GitHub.copilot",
+				"DavidAnson.vscode-markdownlint"
 			],
 			"settings": {
 				"editor.formatOnSave": true
