@@ -1,0 +1,37 @@
+{
+	"name": "Ubuntu",
+	"image": "mcr.microsoft.com/devcontainers/base:noble",
+	"features": {
+		"ghcr.io/devcontainers/features/terraform:1": {},
+		"ghcr.io/dhoeric/features/terraform-docs:1": {},
+		"ghcr.io/devcontainers-extra/features/checkov:1": {},
+		"ghcr.io/devcontainers/features/aws-cli:1": {},
+		"ghcr.io/jsburckhardt/devcontainer-features/gitleaks:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers-extra/features/act:1": {},
+    "ghcr.io/devcontainers-extra/features/actionlint:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"hashicorp.terraform",
+				"terraform-docs.terraform-docs",
+				"ms-azuretools.vscode-docker",
+				"GitHub.vscode-pull-request-github",
+				"GitHub.copilot",
+				"DavidAnson.vscode-markdownlint"
+			],
+			"settings": {
+				"editor.formatOnSave": true
+			}
+		}
+	},
+	"mounts": [
+    {
+      "source": "terraform-playground",
+      "target": "/home/vscode/.aws",
+      "type": "volume"
+    }
+  ],
+  "postCreateCommand": "sudo chown -R vscode:vscode /home/vscode/.aws"
+}
